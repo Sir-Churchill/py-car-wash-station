@@ -50,10 +50,11 @@ class CarWashStation:
         res = []
 
         if car.clean_mark < self.clean_power:
-                price = (car.comfort_class * (
-                        self.clean_power - car.clean_mark) * self.average_rating) / self.distance_from_city_center
+            price = (car.comfort_class * (
+                    self.clean_power - car.clean_mark) *
+                    self.average_rating) / self.distance_from_city_center
 
-                res.append(round(price, 1))
+            res.append(round(price, 1))
 
         total_sum = sum(res)
 
@@ -64,7 +65,8 @@ class CarWashStation:
 
         while count != count + 1:
             self.average_rating = round((self.average_rating *
-                                         self.count_of_ratings + mark) / (self.count_of_ratings + 1), 1)
+                                         self.count_of_ratings + mark) /
+                                        (self.count_of_ratings + 1), 1)
 
             self.count_of_ratings = self.count_of_ratings + 1
             break
